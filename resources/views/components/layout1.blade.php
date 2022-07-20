@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>{{$title}}</title>
 </head>
 <body>
-@yield('content')
+{{$slot}}
 </body>
 </html>
