@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MyController;
+use App\Http\Controllers\ControllerAdmin;
+use App\Http\Controllers\ControllerBooks;
 
 
-Route::get('/', function () {
-    return view('books');
-});
+Route::get('/', [ControllerBooks::class, 'show']);
 
-Route::get('/admin', [MyController::class, 'show']);
+Route::get('/admin', [ControllerAdmin::class, 'show']);

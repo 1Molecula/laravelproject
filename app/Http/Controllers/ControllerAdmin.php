@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-class MyController extends Controller
+class ControllerAdmin extends Controller
 {
 
     public function show()
