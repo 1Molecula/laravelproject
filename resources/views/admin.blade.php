@@ -2,20 +2,10 @@
     <x-slot:title>
         Для администраторов
     </x-slot:title>
-    <h1>Для администраторов</h1>
-    <table cellpadding="4" border="2">
-        <tr><th>ID</th><th>Книга</th><th>Автор</th></tr>
-        @foreach ($books as $book)
-            <div>
-                <tr><td>{{ $book->id }}</td>
-                    <div>
-                        <td>{{ $book->author }}</td>
-                        <div>
-                            <td>{{ $book->books }}</td></tr>
-            </div>
-            </div>
-            </div>
-        @endforeach
+    <h1>Добро пожаловать в редактор для администраторов.</h1>
+    <h2>Выберите таблицу для редактирования:</h2>
+    <table width="300">
+    <tr><td><h3><a href="/admin/books">Книги</a></h3></td> <td><h3><a href="/admin/authors">Авторы</a></h3></td></tr>
     </table>
 </x-layout1>
 
