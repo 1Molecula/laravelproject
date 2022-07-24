@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
+    public function authors()
+    {
+        return $this->belongsTo(Author::class, 'author_id');
+    }
     use HasFactory;
     public $timestamps = false;
 }

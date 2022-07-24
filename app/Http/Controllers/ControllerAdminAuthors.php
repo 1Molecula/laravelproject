@@ -1,14 +1,26 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use App\Models\Book;
+use App\Models\Author;
 class ControllerAdminAuthors extends Controller
 {
 
     public function show()
     {
-        $books = Book::all();
-        return view('admin', ['books' => $books]);
+        $authors = Author::all();
+        $i = 0;
+        $index = 0;
+        foreach ($authors as $author) {
+        $books = $author -> books;
+            foreach ($books as $book) {
+                $i = $i + 1;
+            }
+            $numberOfBooks[$index] = $i;
+            $i = 0;
+            $index = $index + 1;
+        }
+        $index = 0;
+        return view('adminAuthors', ['authors' => $authors, 'numberOfBooks' => $numberOfBooks, 'index' => $index]);
     }
 
 }

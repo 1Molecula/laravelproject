@@ -1,14 +1,16 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use App\Models\Book;
+use App\Models\Author;
+
 class ControllerBooks extends Controller
 {
 
-    public function show()
+    public function show($id)
     {
-        $books = Book::all();
-        return view('books', ['books' => $books]);
+        $author = Author::find($id);
+        $books = $author->books;
+        return view('books', ['author' => $author, 'books' => $books]);
     }
 
 }
