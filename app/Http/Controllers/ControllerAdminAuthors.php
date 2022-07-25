@@ -7,6 +7,7 @@ class ControllerAdminAuthors extends Controller
 
     public function show()
     {
+        $numberOfBooks[0] = 0;
         $authors = Author::all();
         $i = 0;
         $index = 0;
