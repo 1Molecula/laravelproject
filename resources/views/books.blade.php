@@ -16,5 +16,5 @@
             </div>
         @endforeach
     </table>
-    <h3><a href="/" class ="btn">Назад</a></h3>
+    <h3><a href="/authors" class ="btn">Назад</a></h3>
 </x-layout1>

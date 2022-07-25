@@ -1,13 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-class ControllerAdmin extends Controller
+class ControllerMain extends Controller
 {
 
     public function show()
     {
-            return view('admin');
+        return view('main');
     }
 
 }
-
