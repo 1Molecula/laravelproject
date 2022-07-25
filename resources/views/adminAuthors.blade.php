@@ -17,6 +17,12 @@
                             ?>
                             <div>
                                 <td>{{ $author->yearBirth }}</td>
+                                <div>
+                                    <td><a class="btn2" href="/admin/authors/deleteAuthor{{{$author->id}}}">Удалить</a></td>
+                                    <div>
+                                        <td><a class="btn2" href="/admin/authors/editAuthor{{{$author->id}}}">Редактировать</a></td>
+                                    </div>
+                                </div>
             </div>
             </div>
             </div>
@@ -24,5 +30,8 @@
             </div>
         @endforeach
     </table>
-    <h3><a href="/admin" class ="btn">Назад</a></h3>
+    <table width="400">
+        <tr><td><h3><a href="/admin" class ="btn">Назад</a></h3></td>
+            <td><h3><a class="btn">Добавить книгу</a></h3></td></tr>
+    </table>
 </x-layout1>

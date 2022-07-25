@@ -20,6 +20,12 @@
                                 ?>
                             <div>
                                 <td>{{ $book->yearRelease }}</td>
+                                <div>
+                                    <td><a class="btn2" href="/admin/books/deleteBook{{{$book->id}}}">Удалить</a></td>
+                                    <div>
+                                        <td><a class="btn2"   href="/admin/books/editBook{{{$book->id}}}">Редактировать</a></td>
+                                    </div>
+                                </div>
             </div>
             </div>
             </div>
@@ -28,5 +34,8 @@
             </div>
         @endforeach
     </table>
-    <h3><a href="/admin" class ="btn">Назад</a></h3>
+    <table width="400">
+        <tr><td><h3><a href="/admin" class ="btn">Назад</a></h3></td>
+            <td><h3><a class="btn" href="/admin/books/createBook">Добавить книгу</a></h3></td></tr>
+    </table>
 </x-layout1>

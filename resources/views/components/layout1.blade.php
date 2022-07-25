@@ -10,6 +10,16 @@
         border-radius: 10px;
     }
 </style>
+<style>
+    .btn2 {
+        display: inline-block;
+        background: #ffffff;
+        color: #1a202c;
+        padding: 0.07rem 0.3rem;
+        text-decoration: none;
+        border-radius: 0px;
+    }
+</style>
 <head>
     <meta charset="utf-8">
     <title>{{$title}}</title>
