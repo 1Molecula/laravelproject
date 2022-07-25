@@ -1,10 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use App\Models\Author;
 use App\Models\Book;
 
-class ControllerDelete extends Controller
+class ControllerDeleteBooks extends Controller
 {
 
     public function deleteBook($id)

@@ -32,6 +32,6 @@
     </table>
     <table width="400">
         <tr><td><h3><a href="/admin" class ="btn">Назад</a></h3></td>
-            <td><h3><a class="btn">Добавить книгу</a></h3></td></tr>
+            <td><h3><a class="btn" href="/admin/authors/createAuthor">Добавить автора</a></h3></td></tr>
     </table>
 </x-layout1>

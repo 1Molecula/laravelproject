@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Author;
 use App\Models\Book;
 
-class ControllerEdit extends Controller
+class ControllerEditBooks extends Controller
 {
 
     public function editBookForm($id)
@@ -14,7 +14,7 @@ class ControllerEdit extends Controller
         $nameBook = $book -> books;
         $author_id = $book -> author_id;
         $yearRelease = $book -> yearRelease;
-        return view('editBook', ['book' => $nameBook, 'author_id' => $author_id, 'yearRelease' => $yearRelease, 'id' => $id]);
+        return view('editBooks', ['book' => $nameBook, 'author_id' => $author_id, 'yearRelease' => $yearRelease, 'id' => $id]);
     }
 
 

@@ -1,15 +1,14 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
-class ControllerCreate extends Controller
+class ControllerCreateBooks extends Controller
 {
     public function createBookForm()
     {
-        return view('create');
+        return view('createBooks');
     }
 
     public function createBook(Request $request)
