@@ -7,9 +7,9 @@
     <form method="post">
         @csrf
         <p>Имя автора:</p>
-        <p><input name="author" autocomplete="off" value="{{$author}}"></p>
+        <p><input name="author" autocomplete="off" value="{{$author}}"  pattern="^[A-Za-zА-Яа-яЁё\s]+${1,}"></p>
         <p>Год рождения автора:</p>
-        <p><input name="yearBirth" autocomplete="off" value="{{$yearBirth}}">
+        <p><input name="yearBirth" autocomplete="off" value="{{$yearBirth}}"  pattern="[0-9]{1,}">
         <input name="id" type="hidden" value="{{$id}}"></p>
         <p><input type="submit" value="Сохранить изменения"></p>
     </form>

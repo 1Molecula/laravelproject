@@ -1,6 +1,5 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
 use App\Models\Book;
 
 class ControllerAdminBooks extends Controller
@@ -12,7 +11,7 @@ class ControllerAdminBooks extends Controller
         $nameAuthor[0] = '';
         $index = 0;
         foreach ($books as $book) {
-            $authors = $book -> authors;
+            $authors = $book -> author;
             $nameAuthor[$index] = $authors;
             $index = $index + 1;
         }

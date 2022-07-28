@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
+
 use App\Models\Book;
 
 class ControllerDeleteBooks extends Controller

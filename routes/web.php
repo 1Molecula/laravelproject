@@ -55,3 +55,4 @@ Route::get('/admin/authors/deleteAuthor{id}', [ControllerDeleteAuthors::class, '
 
 Route::get('/admin/authors/editAuthor{id}', [ControllerEditAuthors::class, 'editAuthorForm']);
 Route::post('/admin/authors/editAuthor{id}', [ControllerEditAuthors::class, 'editAuthor']);
+

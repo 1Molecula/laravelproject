@@ -7,11 +7,11 @@
     <form method="post">
         @csrf
         <p>Название книги:</p>
-        <p><input name="book" autocomplete="off" value="{{$book}}"></p>
+        <p><input name="book" autocomplete="off" value="{{$book}}"  pattern="^[0-9A-Za-zА-Яа-яЁё\s]+${1,}"></p>
         <p>ID автора книги:</p>
-        <p><input name="author_id" autocomplete="off" value="{{$author_id}}"></p>
+        <p><input name="author_id" autocomplete="off" value="{{$author_id}}" pattern="[0-9]{1,}"></p>
         <p>Год выхода книги:</p>
-        <p><input name="dateRelease" autocomplete="off" value="{{$yearRelease}}">
+        <p><input name="dateRelease" autocomplete="off" value="{{$yearRelease}}"  pattern="[0-9]{1,}">
         <input name="id" type="hidden" value="{{$id}}"></p>
         <p><input type="submit" value="Сохранить изменения"></p>
     </form>

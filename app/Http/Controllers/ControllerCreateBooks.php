@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
 use App\Models\Book;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class ControllerCreateBooks extends Controller
@@ -17,13 +17,19 @@ class ControllerCreateBooks extends Controller
         $author_id = $request->input('author_id');
         $yearRelease = $request->input('dateRelease');
 
-        $book = new Book;
-        $book -> books = $nameBook;
-        $book -> author_id = $author_id;
-        $book -> yearRelease = $yearRelease;
-        $book -> save();
+        $author = Author::find($author_id);
+        if(!empty($author -> authors)) {
 
-        header("Refresh:0; url=/admin/books");
+            $book = new Book;
+            $book->books = $nameBook;
+            $book->author_id = $author_id;
+            $book->yearRelease = $yearRelease;
+            $book->save();
+
+            header("Refresh:0; url=/admin/books");
+        }else{
+            return view('errorNotAuthor');
+        }
     }
 
 }
