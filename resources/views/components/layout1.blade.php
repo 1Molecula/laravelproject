@@ -11,6 +11,14 @@
     }
 </style>
 <style>
+.center {
+width: 500px; /* Ширина элемента в пикселах */
+padding: 20px; /* Поля вокруг текста */
+margin: auto; /* Выравниваем по центру */
+background: #ffffff; /* Цвет фона */
+}
+</style>
+<style>
     .btn2 {
         display: inline-block;
         background: #ffffff;
@@ -25,6 +33,8 @@
     <title>{{$title}}</title>
 </head>
 <body>
+<div class="center">
 {{$slot}}
+</div>
 </body>
 </html>
