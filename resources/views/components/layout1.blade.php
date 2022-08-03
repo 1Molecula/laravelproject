@@ -26,6 +26,16 @@
 </head>
 <body>
 <div align="center">
+    @auth
+        <div align="right">
+            <h4><a href="/logout" class="btn">Выйти из сессии</a></h4>
+        </div>
+    @endauth
+    @guest
+        <div align="right">
+            <h4><a href="/authentication" class="btn">Войти</a></h4>
+        </div>
+    @endguest
 {{$slot}}
 </div>
 </body>
