@@ -15,6 +15,7 @@ use App\Http\Controllers\ControllerCreateAuthors;
 use App\Http\Controllers\ControllerDeleteAuthors;
 use App\Http\Controllers\ControllerEditAuthors;
 use App\Http\Controllers\ControllerRegistration;
+use App\Http\Controllers\ControllerTemperature;
 
 
 Route::get('/', [ControllerMain::class, 'show']);
@@ -48,6 +49,9 @@ Route::get('/logout', function () {
 
 Route::get('/authors', [ControllerAuthors::class, 'show']);
 Route::get('/authors/{id}', [ControllerBooks::class, 'show'])->where('id', '[0-9]+');
+
+
+Route::get('/weather', [ControllerTemperature::class, 'tableTemperature']);
 
 
 
