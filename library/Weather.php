@@ -16,10 +16,14 @@ class  Weather{
         return $putData;
     }
 
-    public static function parsing()
+    public static function parsing($testData = 0)
     {
 
-        $putData = Weather::getHTML();
+        if ($testData == 0) {
+            $putData = Weather::getHTML();
+        }else{
+            $putData = $testData;
+        }
         $temperature = strpos($putData, '<span class="unit unit_temperature_c"><span class="sign">');
         $temperature = substr($putData, $temperature);
         $putData = strpos($temperature, '</span><span class="unit unit_temperature_f">');
@@ -27,6 +31,9 @@ class  Weather{
         $temperature = str_replace('<span class="unit unit_temperature_c"><span class="sign">', '', $temperature);
         $temperature = str_replace('<span class="lower">', '', $temperature);
         $temperature = str_replace('</span>', '', $temperature);
+        if(empty($temperature)){
+            return 'Ошибка: неверные входные данные';
+        }
         return $temperature;
 
     }
