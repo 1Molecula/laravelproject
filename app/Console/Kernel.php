@@ -18,7 +18,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function () {
-            Weather::temperature();
+            $temperature = Weather::getTemperatureFromGismeteo();
+            Weather::saveTemperature($temperature);
         })->everyMinute();
     }
 

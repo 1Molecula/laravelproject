@@ -16,36 +16,37 @@ class  Weather{
         return $putData;
     }
 
-    public static function parsing($testData = 0)
-    {
 
-        if ($testData == 0) {
-            $putData = Weather::getHTML();
-        }else{
-            $putData = $testData;
+    public static function parsing($data = 0)
+    {
+        if (gettype($data) != 'string'){
+            throw new \InvalidArgumentException('invalid html');
         }
-        $temperature = strpos($putData, '<span class="unit unit_temperature_c"><span class="sign">');
-        $temperature = substr($putData, $temperature);
-        $putData = strpos($temperature, '</span><span class="unit unit_temperature_f">');
-        $temperature = substr($temperature, 0, $putData);
+        $temperature = strpos($data, '<span class="unit unit_temperature_c"><span class="sign">');
+        $temperature = substr($data, $temperature);
+        $data = strpos($temperature, '</span><span class="unit unit_temperature_f">');
+        $temperature = substr($temperature, 0, $data);
         $temperature = str_replace('<span class="unit unit_temperature_c"><span class="sign">', '', $temperature);
         $temperature = str_replace('<span class="lower">', '', $temperature);
         $temperature = str_replace('</span>', '', $temperature);
-        if(empty($temperature)){
-            return 'Ошибка: неверные входные данные';
+        if (empty($temperature)){
+            throw new \InvalidArgumentException('invalid html');
         }
         return $temperature;
-
     }
-    public static function temperature(){
 
-        $temperature = Weather::parsing();
+
+    public static function getTemperatureFromGismeteo(){
+        $data = Weather::getHTML();
+        $temperature = Weather::parsing($data);
+        return $temperature;
+    }
+
+
+    public static function saveTemperature($temperature){
         $weather = new Temperature;
         $weather -> temperature = $temperature;
         $weather->added_on= date('d.m.Y H:i:s');
         $weather->save();
-
     }
 }
-
-
