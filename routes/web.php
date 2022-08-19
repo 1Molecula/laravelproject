@@ -18,8 +18,12 @@ use App\Http\Controllers\ControllerRegistration;
 use App\Http\Controllers\ControllerTemperature;
 
 
-Route::get('/', [ControllerMain::class, 'show']);
+Route::get('/', [ControllerMain::class, 'show']) -> name('main');
 
+
+Route::get('/error', function (){
+    return view('errorNotAuth');
+})->name('errorNotAuth');
 
 
 Route::get('/authentication', function (){
