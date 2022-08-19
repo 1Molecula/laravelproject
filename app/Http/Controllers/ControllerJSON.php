@@ -30,9 +30,11 @@ class ControllerJSON extends Controller
             $book->author_id = $author_id;
             $book->yearRelease = $yearRelease;
             $book->save();
+
+        return response(null, 200);
     }
 
-    public function deleteBook($id)
+    public function deleteBook(Request $request, $id)
     {
         Book::find($id)->delete();
         return response(null, 204);

@@ -33,7 +33,8 @@ class WeatherTest extends TestCase
     public function testGetHtml()
     {
         $HTML = Weather::getHTML();
-        $this->assertEquals("<!", substr($HTML, 0, 2));
+        $pos = strpos($HTML, '<!doctype html>');
+        $this->assertNotEquals(false, $pos);
     }
 
     public function testGetTemperatureFromGismeteo()
